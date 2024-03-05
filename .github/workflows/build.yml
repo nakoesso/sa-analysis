@@ -60,5 +60,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-              ln -sf  opt/applications/sa/target/sa.jar /etc/systemd/system/sa
-              /etc/systemd/system/sa start
+              ln -sf /opt/applications/sa/sa.jar /etc/systemd/system/sa
+              systemctl enable sa
+              systemctl start sa
